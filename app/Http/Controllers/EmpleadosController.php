@@ -83,4 +83,16 @@ class EmpleadosController extends Controller
 
         return back()->with('mensaje', 'Empleado actualizado exitosamente');
     }
+
+    public function destroy(Empleado $empleado)
+    {
+        $persona = $empleado->trabajador->persona;
+        $trabajador = $empleado->trabajador;
+
+        $empleado->delete();
+        $trabajador->delete();
+        $persona->delete();
+
+        return back()->with('mensaje', 'Empleado eliminado.');
+    }
 }

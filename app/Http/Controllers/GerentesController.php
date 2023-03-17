@@ -79,4 +79,16 @@ class GerentesController extends Controller
 
         return back()->with('mensaje', 'Gerente actualizado exitosamente');
     }
+
+    public function destroy(Gerente $gerente)
+    {
+        $persona = $gerente->trabajador->persona;
+        $trabajador = $gerente->trabajador;
+
+        $gerente->delete();
+        $trabajador->delete();
+        $persona->delete();
+
+        return back()->with('mensaje', 'Gerente eliminado.');
+    }
 }
