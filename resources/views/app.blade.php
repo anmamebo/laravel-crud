@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>EPD3 - TAD</title>
+
+    @vite(['resources/js/app.js', 'resources/css/app.scss'])
 </head>
 
 <body>
