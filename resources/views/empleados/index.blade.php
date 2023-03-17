@@ -1,6 +1,9 @@
 @extends('app')
 
 @section('apartado')
+
+<a href="{{ route('empleados.create') }}">Crear empleado</a>
+
 <ul>
     @foreach ($empleados as $empleado)
     <li>
