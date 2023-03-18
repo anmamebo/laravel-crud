@@ -12,11 +12,19 @@ class Trabajador extends Persona
 
     protected $fillable = ['telefonos', 'persona_id'];
 
+    /**
+     * Obtiene los teléfonos del trabajador.
+     */
+    public function telefonos()
+    {
+        return $this->hasMany(Telefono::class);
+    }
+
     public function persona()
     {
         return $this->belongsTo(Persona::class);
     }
-    
+
     public function empleado()
     {
         return $this->hasOne(Empleado::class);
