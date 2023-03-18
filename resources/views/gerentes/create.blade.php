@@ -1,18 +1,22 @@
 @extends('app')
 
-@section('apartado')
-@if(session('mensaje'))
-<div style="color: green;">{{ session('mensaje') }}</div>
-@endif
+<script defer src="{{ asset('js/telefonoForm.js') }}"></script>
 
+@section('apartado')
 <div class="container">
     <h3 class="container-title pb-4 px-5">Crear Gerente</h3>
 
     @if($errors->any())
-    <div class="alert alert-danger px-5 align-items-center">
+    <div class="alert alert-danger px-5">
         @foreach($errors->all() as $error)
         <p class="m-0">{{ $error }}</p>
         @endforeach
+    </div>
+    @endif
+
+    @if(session('mensaje'))
+    <div class="alert alert-success px-5">
+        <p class="m-0">{{ session('mensaje') }}</p>    
     </div>
     @endif
 
@@ -42,24 +46,6 @@
             </div>
             <button type="button" class="btn btn-light mt-1" id="addTelefono">Añadir teléfono</button>
         </div>
-
-        <script>
-            const addTelefonoBtn = document.getElementById('addTelefono');
-            const telefonosDiv = document.getElementById('telefonos');
-
-            addTelefonoBtn.addEventListener('click', () => {
-                const telefonoDiv = document.createElement('div');
-                telefonoDiv.classList.add('mb-2')
-                const telefonoInput = document.createElement('input');
-                telefonoInput.classList.add('form-control', 'bg-dark', 'text-white')
-                telefonoInput.type = 'tel';
-                telefonoInput.name = 'telefonos[]';
-                telefonoInput.required = true;
-
-                telefonoDiv.appendChild(telefonoInput);
-                telefonosDiv.appendChild(telefonoDiv);
-            });
-        </script>
 
         <div class="mb-3 col-md-12">
             <label for="salario" class="form-label">Salario</label>

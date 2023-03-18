@@ -1,18 +1,20 @@
 @extends('app')
 
 @section('apartado')
-@if(session('mensaje'))
-<div style="color: green;">{{ session('mensaje') }}</div>
-@endif
-
 <div class="container">
     <h3 class="container-title pb-4 px-5">Editar Empleado</h3>
 
     @if($errors->any())
-    <div class="alert alert-danger px-5 align-items-center">
+    <div class="alert alert-danger px-5">
         @foreach($errors->all() as $error)
         <p class="m-0">{{ $error }}</p>
         @endforeach
+    </div>
+    @endif
+
+    @if(session('mensaje'))
+    <div class="alert alert-success px-5">
+        <p class="m-0">{{ session('mensaje') }}</p>
     </div>
     @endif
 
