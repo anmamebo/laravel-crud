@@ -12,9 +12,9 @@ class GerentesController extends Controller
 {
     public function index(): View
     {
-        return view('gerentes.index', [
-            'gerentes' => Gerente::all()
-        ]);
+        $gerentes = Gerente::all();
+
+        return view('gerentes.index', compact('gerentes'));
     }
 
     public function create()
@@ -25,27 +25,26 @@ class GerentesController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nombre'=> 'required|string',
-            'apellidos'=>'required|string',
-            'edad'=>'required|integer',
-            'salario'=>'required|numeric'
+            'nombre' => 'required|string',
+            'apellidos' => 'required|string',
+            'edad' => 'required|integer',
+            'salario' => 'required|numeric'
         ]);
 
-        $gerente = new Gerente;
-        $gerente->salario = $request->salario;
+        $persona = Persona::create([
+            'nombre' => $request->nombre,
+            'apellidos' => $request->apellidos,
+            'edad' => $request->edad,
+        ]);
 
-        $persona = new Persona();
-        $persona->nombre = $request->nombre;
-        $persona->apellidos = $request->apellidos;
-        $persona->edad = $request->edad;
-        $persona->save();
+        $trabajador = Trabajador::create([
+            'persona_id' => $persona->id,
+        ]);
 
-        $trabajador = new Trabajador();
-        $trabajador->persona_id = $persona->id;
-        $trabajador->save();
-
-        $gerente->trabajador_id = $trabajador->id;
-        $gerente->save();
+        $gerente = Gerente::create([
+            'salario' => $request->salario,
+            'trabajador_id' => $trabajador->id,
+        ]);
 
         return back()->with('mensaje', 'Gerente creado exitosamente');
     }
@@ -58,25 +57,27 @@ class GerentesController extends Controller
     public function update(Gerente $gerente, Request $request)
     {
         $request->validate([
-            'nombre'=> 'required|string',
-            'apellidos'=>'required|string',
-            'edad'=>'required|integer',
-            'salario'=>'required|numeric'
+            'nombre' => 'required|string',
+            'apellidos' => 'required|string',
+            'edad' => 'required|integer',
+            'salario' => 'required|numeric'
         ]);
 
-        $gerente->salario = $request->salario;
+        $persona_id = $gerente->trabajador->persona->id;
+        Persona::where('id', $persona_id)->update([
+            'nombre' => $request->nombre,
+            'apellidos' => $request->apellidos,
+            'edad' => $request->edad,
+        ]);
 
-        $persona = Persona::find($gerente->trabajador->persona->id);
-        $persona->nombre = $request->nombre;
-        $persona->apellidos = $request->apellidos;
-        $persona->edad = $request->edad;
-        $persona->save();
+        $trabajador_id = $gerente->trabajador->id;
+        Trabajador::where('id', $trabajador_id)->update([]);
 
-        $trabajador = $gerente->trabajador;
-        $trabajador->save();
-
-        $gerente->save();
-
+        $gerente_id = $gerente->id;
+        Gerente::where('id', $gerente_id)->update([
+            'salario' => $request->salario,
+        ]);
+        
         return back()->with('mensaje', 'Gerente actualizado exitosamente');
     }
 

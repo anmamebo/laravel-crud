@@ -10,8 +10,8 @@ class TrabajadorsController extends Controller
 {
     public function index(): View
     {
-        return view('trabajadores.index', [
-            'trabajadores' => Trabajador::all()
-        ]);
+        $trabajadores = Trabajador::all();
+
+        return view('trabajadores.index', compact('trabajadores'));
     }
 }

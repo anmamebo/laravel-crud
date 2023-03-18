@@ -12,9 +12,9 @@ class EmpleadosController extends Controller
 {
     public function index(): View
     {
-        return view('empleados.index', [
-            'empleados' => Empleado::all()
-        ]);
+        $empleados = Empleado::all();
+
+        return view('empleados.index', compact('empleados'));
     }
 
     public function create()
@@ -25,29 +25,28 @@ class EmpleadosController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nombre'=> 'required|string',
-            'apellidos'=>'required|string',
-            'edad'=>'required|integer',
-            'horasTrabajadas'=>'required|numeric',
-            'precioPorHora'=>'required|numeric'
+            'nombre' => 'required|string',
+            'apellidos' => 'required|string',
+            'edad' => 'required|integer',
+            'horas_trabajadas' => 'required|numeric',
+            'precio_por_hora' => 'required|numeric'
         ]);
 
-        $empleado = new Empleado;
-        $empleado->horasTrabajadas = $request->horasTrabajadas;
-        $empleado->precioPorHora = $request->precioPorHora;
+        $persona = Persona::create([
+            'nombre' => $request->nombre,
+            'apellidos' => $request->apellidos,
+            'edad' => $request->edad,
+        ]);
 
-        $persona = new Persona();
-        $persona->nombre = $request->nombre;
-        $persona->apellidos = $request->apellidos;
-        $persona->edad = $request->edad;
-        $persona->save();
+        $trabajador = Trabajador::create([
+            'persona_id' => $persona->id,
+        ]);
 
-        $trabajador = new Trabajador();
-        $trabajador->persona_id = $persona->id;
-        $trabajador->save();
-
-        $empleado->trabajador_id = $trabajador->id;
-        $empleado->save();
+        $empleado = Empleado::create([
+            'horas_trabajadas' => $request->horas_trabajadas,
+            'precio_por_hora' => $request->precio_por_hora,
+            'trabajador_id' => $trabajador->id,
+        ]);
 
         return back()->with('mensaje', 'Empleado creado exitosamente');
     }
@@ -60,26 +59,28 @@ class EmpleadosController extends Controller
     public function update(Empleado $empleado, Request $request)
     {
         $request->validate([
-            'nombre'=> 'required|string',
-            'apellidos'=>'required|string',
-            'edad'=>'required|integer',
-            'horasTrabajadas'=>'required|numeric',
-            'precioPorHora'=>'required|numeric'
+            'nombre' => 'required|string',
+            'apellidos' => 'required|string',
+            'edad' => 'required|integer',
+            'horas_trabajadas' => 'required|numeric',
+            'precio_por_hora' => 'required|numeric'
         ]);
 
-        $empleado->horasTrabajadas = $request->horasTrabajadas;
-        $empleado->precioPorHora = $request->precioPorHora;
+        $persona_id = $empleado->trabajador->persona->id;
+        Persona::where('id', $persona_id)->update([
+            'nombre' => $request->nombre,
+            'apellidos' => $request->apellidos,
+            'edad' => $request->edad,
+        ]);
 
-        $persona = Persona::find($empleado->trabajador->persona->id);
-        $persona->nombre = $request->nombre;
-        $persona->apellidos = $request->apellidos;
-        $persona->edad = $request->edad;
-        $persona->save();
+        $trabajador_id = $empleado->trabajador->id;
+        Trabajador::where('id', $trabajador_id)->update([]);
 
-        $trabajador = $empleado->trabajador;
-        $trabajador->save();
-
-        $empleado->save();
+        $empleado_id = $empleado->id;
+        Empleado::where('id', $empleado_id)->update([
+            'horas_trabajadas' => $request->horas_trabajadas,
+            'precio_por_hora' => $request->precio_por_hora,
+        ]);
 
         return back()->with('mensaje', 'Empleado actualizado exitosamente');
     }
