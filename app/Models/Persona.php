@@ -9,5 +9,10 @@ class Persona extends Model
 {
     use HasFactory;
 
-    protected String $nombre;
+    protected $fillable = ['nombre', 'apellidos', 'edad'];
+    
+    public function trabajador()
+    {
+        return $this->hasOne(Trabajador::class);
+    }
 }

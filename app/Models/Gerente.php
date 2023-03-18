@@ -9,8 +9,17 @@ class Gerente extends Trabajador
 {
     use HasFactory;
 
-    public function trabajador() 
+    protected $fillable = ['salario', 'trabajador_id'];
+
+    public function trabajador()
     {
         return $this->belongsTo(Trabajador::class);
+    }
+
+    public function calcularSueldo()
+    {
+        $sueldo = $this->salario;
+        
+        return $sueldo;
     }
 }

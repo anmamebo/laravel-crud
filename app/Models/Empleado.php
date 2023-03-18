@@ -9,8 +9,17 @@ class Empleado extends Trabajador
 {
     use HasFactory;
 
-    public function trabajador() 
+    protected $fillable = ['horas_trabajadas', 'precio_por_hora', 'trabajador_id'];
+
+    public function trabajador()
     {
         return $this->belongsTo(Trabajador::class);
+    }
+
+    public function calcularSueldo()
+    {
+        $sueldo = $this->horas_trabajadas * $this->precio_por_hora;
+
+        return $sueldo;
     }
 }
