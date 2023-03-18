@@ -28,7 +28,7 @@ class GerentesController extends Controller
             'nombre' => 'required|string',
             'apellidos' => 'required|string',
             'edad' => 'required|integer',
-            'telefonos.*' => 'nullable|regex:/^\d{9}$/',
+            'telefonos.*' => 'required|regex:/^\d{9}$/',
             'salario' => 'required|numeric'
         ]);
 
@@ -67,7 +67,7 @@ class GerentesController extends Controller
             'nombre' => 'required|string',
             'apellidos' => 'required|string',
             'edad' => 'required|integer',
-            'telefonos.*' => 'nullable|regex:/^\d{9}$/',
+            'telefonos.*' => 'required|regex:/^\d{9}$/',
             'salario' => 'required|numeric'
         ]);
 

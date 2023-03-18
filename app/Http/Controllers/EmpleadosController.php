@@ -28,7 +28,7 @@ class EmpleadosController extends Controller
             'nombre' => 'required|string',
             'apellidos' => 'required|string',
             'edad' => 'required|integer',
-            'telefonos.*' => 'nullable|regex:/^\d{9}$/',
+            'telefonos.*' => 'required|regex:/^\d{9}$/',
             'horas_trabajadas' => 'required|numeric',
             'precio_por_hora' => 'required|numeric'
         ]);
@@ -69,7 +69,7 @@ class EmpleadosController extends Controller
             'nombre' => 'required|string',
             'apellidos' => 'required|string',
             'edad' => 'required|integer',
-            'telefonos.*' => 'nullable|regex:/^\d{9}$/',
+            'telefonos.*' => 'required|regex:/^\d{9}$/',
             'horas_trabajadas' => 'required|numeric',
             'precio_por_hora' => 'required|numeric'
         ]);
