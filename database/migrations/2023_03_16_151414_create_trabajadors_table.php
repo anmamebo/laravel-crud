@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('trabajadors', function (Blueprint $table) {
             $table->id();
             $table->foreignId('persona_id')->constrained();
+            $table->json('telefonos')->nullable();
             $table->timestamps();
         });
     }

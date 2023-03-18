@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('empleados', function (Blueprint $table) {
             $table->id();
-            $table->double('horasTrabajadas');
-            $table->double('precioPorHora');
+            $table->double('horas_trabajadas');
+            $table->double('precio_por_hora');
             $table->foreignId('trabajador_id')->constrained();
             $table->timestamps();
         });
