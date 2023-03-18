@@ -1,22 +1,55 @@
 @extends('app')
 
 @section('apartado')
+<div class="container">
+    <h3 class="container-title text-white pb-3">Gerentes</h3>
 
-<a href="{{ route('gerentes.create') }}">Crear gerente</a>
+    <a href="{{ route('gerentes.create') }}" class="btn btn-light">Crear gerente</a>
 
-<ul>
-    @foreach ($gerentes as $gerente)
-    <li>
-        {{ $gerente->trabajador->persona->nombre }}
-        <a href="{{ route('gerentes.edit', $gerente) }}">Editar</a>
-
-        <form action="{{ route('gerentes.delete', $gerente) }}" method="post">
-            @method('DELETE')
-            @csrf
-            <input type="submit" value="Eliminar">
-        </form>
-    </li>
-    {{ $gerente->trabajador->telefonos }}
-    @endforeach
-</ul>
+    <div class="table-responsive mt-4">
+        <table class="table table-striped table-dark table-sm">
+            <thead>
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Edad</th>
+                    <th scope="col">Salario</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                @foreach ($gerentes as $gerente)
+                <tr>
+                    <td>{{ $gerente->trabajador->id }}</td>
+                    <td>{{ $gerente->trabajador->persona->nombre }}</td>
+                    <td>{{ $gerente->trabajador->persona->apellidos }}</td>
+                    <td>{{ $gerente->trabajador->persona->edad }}</td>
+                    <td>{{ $gerente->salario }}</td>
+                    <td class="text-end">
+                        <a href="{{ route('gerentes.edit', $gerente) }}">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                            </svg>
+                        </a>
+                    </td>
+                    <td class="text-end">
+                        <form action="{{ route('gerentes.delete', $gerente) }}" method="post">
+                            @method('DELETE')
+                            @csrf
+                            <button type="submit" class="btn p-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                                </svg>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+</div>
 @endsection
