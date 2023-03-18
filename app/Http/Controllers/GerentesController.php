@@ -28,6 +28,7 @@ class GerentesController extends Controller
             'nombre' => 'required|string',
             'apellidos' => 'required|string',
             'edad' => 'required|integer',
+            'telefonos.*' => 'nullable|regex:/^\d{9}$/',
             'salario' => 'required|numeric'
         ]);
 
@@ -40,6 +41,12 @@ class GerentesController extends Controller
         $trabajador = Trabajador::create([
             'persona_id' => $persona->id,
         ]);
+
+        if (!empty($request->telefonos)) {
+            foreach ($request->telefonos as $telefono) {
+                $trabajador->telefonos()->create(['numero_telefono' => $telefono]);
+            }
+        }
 
         $gerente = Gerente::create([
             'salario' => $request->salario,
@@ -77,7 +84,7 @@ class GerentesController extends Controller
         Gerente::where('id', $gerente_id)->update([
             'salario' => $request->salario,
         ]);
-        
+
         return back()->with('mensaje', 'Gerente actualizado exitosamente');
     }
 
@@ -85,6 +92,12 @@ class GerentesController extends Controller
     {
         $persona = $gerente->trabajador->persona;
         $trabajador = $gerente->trabajador;
+
+        $telefonos = $trabajador->telefonos;
+
+        foreach($telefonos as $telefono) {
+            $telefono->delete();
+        }
 
         $gerente->delete();
         $trabajador->delete();

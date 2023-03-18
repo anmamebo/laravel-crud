@@ -28,6 +28,7 @@ class EmpleadosController extends Controller
             'nombre' => 'required|string',
             'apellidos' => 'required|string',
             'edad' => 'required|integer',
+            'telefonos.*' => 'nullable|regex:/^\d{9}$/',
             'horas_trabajadas' => 'required|numeric',
             'precio_por_hora' => 'required|numeric'
         ]);
@@ -42,12 +43,18 @@ class EmpleadosController extends Controller
             'persona_id' => $persona->id,
         ]);
 
+        if (!empty($request->telefonos)) {
+            foreach ($request->telefonos as $telefono) {
+                $trabajador->telefonos()->create(['numero_telefono' => $telefono]);
+            }
+        }
+
         $empleado = Empleado::create([
             'horas_trabajadas' => $request->horas_trabajadas,
             'precio_por_hora' => $request->precio_por_hora,
             'trabajador_id' => $trabajador->id,
         ]);
-
+        
         return back()->with('mensaje', 'Empleado creado exitosamente');
     }
 
@@ -89,6 +96,12 @@ class EmpleadosController extends Controller
     {
         $persona = $empleado->trabajador->persona;
         $trabajador = $empleado->trabajador;
+
+        $telefonos = $trabajador->telefonos;
+
+        foreach($telefonos as $telefono) {
+            $telefono->delete();
+        }
 
         $empleado->delete();
         $trabajador->delete();
