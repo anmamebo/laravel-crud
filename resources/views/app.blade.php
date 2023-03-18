@@ -12,7 +12,7 @@
 
 <body>
     <!-- HEADER -->
-    <header class="navbar navbar-expand-md navbar-dark bg-primary sticky-top p-2 border-bottom">
+    <header class="navbar navbar-expand-md navbar-dark sticky-top p-2 border-bottom">
         <a class="navbar-brand px-3 text-white" href="{{ route('trabajadores') }}">CRUD LARAVEL</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -23,7 +23,7 @@
     <div class="main-container container-fluid">
         <div class="row">
             <!-- SIDEBAR -->
-            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse">
                 <div class="position-sticky pt-3 sidebar-sticky">
                     <h6 class="sidebar-heading text-white px-3 mt-5 mb-4 text-uppercase">
                         <span>Gestión Trabajadores</span>
