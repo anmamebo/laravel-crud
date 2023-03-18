@@ -40,7 +40,7 @@
                     <input type="tel" class="form-control bg-dark text-white" name="telefonos[]" id="telefonos">
                 </div>
             </div>
-            <button type="button" class="btn btn-light" id="addTelefono">Añadir teléfono</button>
+            <button type="button" class="btn btn-light mt-1" id="addTelefono">Añadir teléfono</button>
         </div>
 
         <script>
