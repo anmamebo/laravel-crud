@@ -3,15 +3,16 @@
 <script defer src="{{ asset('js/telefonoForm.js') }}"></script>
 
 @section('apartado')
-<a type="button" class="btn border-0" href="{{ route('gerentes') }}">
-    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="white" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
-    </svg>
-</a>
+<div class="row">
+    <a type="button" class="col-sm-1 btn border-0" href="{{ route('gerentes') }}">
+        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="white" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
+        </svg>
+    </a>
+    <h3 class="col-sm-11 container-title text-center text-sm-start text-white m-0 p-2">Crear Gerente</h3>
+</div>
 
-<div class="container">
-    <h3 class="container-title pb-4 px-5">Crear Gerente</h3>
-
+<div class="container mt-4">
     @if($errors->any())
     <div class="alert alert-danger px-5">
         @foreach($errors->all() as $error)
