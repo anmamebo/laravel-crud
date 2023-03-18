@@ -12,15 +12,17 @@
                     <th scope="col">Nombre</th>
                     <th scope="col">Apellidos</th>
                     <th scope="col">Edad</th>
+                    <th scope="col">Sueldo</th>
                 </tr>
             </thead>
             <tbody class="table-group-divider">
                 @foreach ($trabajadores as $trabajador)
                 <tr>
-                    <td>{{ $trabajador->calcularSueldo() }}</td>
+                    <td>{{ $trabajador->id }}</td>
                     <td>{{ $trabajador->persona->nombre }}</td>
                     <td>{{ $trabajador->persona->apellidos }}</td>
                     <td>{{ $trabajador->persona->edad }}</td>
+                    <td>{{ $trabajador->calcularSueldo() }}</td>
                 </tr>
                 @endforeach
             </tbody>

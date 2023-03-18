@@ -14,8 +14,7 @@
                     <th scope="col">Nombre</th>
                     <th scope="col">Apellidos</th>
                     <th scope="col">Edad</th>
-                    <th scope="col">Horas trabajadas</th>
-                    <th scope="col">Precio por hora</th>
+                    <th scope="col">Sueldo</th>
                     <th scope="col"></th>
                     <th scope="col"></th>
                 </tr>
@@ -27,8 +26,7 @@
                     <td>{{ $empleado->trabajador->persona->nombre }}</td>
                     <td>{{ $empleado->trabajador->persona->apellidos }}</td>
                     <td>{{ $empleado->trabajador->persona->edad }}</td>
-                    <td>{{ $empleado->horasTrabajadas }}</td>
-                    <td>{{ $empleado->precioPorHora }}</td>
+                    <td>{{ $empleado->calcularSueldo() }}</td>
                     <td class="text-end">
                         <a href="{{ route('empleados.edit', $empleado) }}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-pencil-square" viewBox="0 0 16 16">

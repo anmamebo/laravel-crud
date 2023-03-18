@@ -33,14 +33,14 @@
         @enderror
         <div class="mb-3 col-md-6">
             <label for="horasTrabajadas" class="form-label">Horas trabajadas</label>
-            <input type="number" step="any" class="form-control bg-dark text-white" name="horasTrabajadas" id="horasTrabajadas" required>
+            <input type="number" step="any" class="form-control bg-dark text-white" name="horas_trabajadas" id="horasTrabajadas" required>
         </div>
         @error('horasTrabajadas')
         Error en las horas trabajadas
         @enderror
         <div class="mb-3 col-md-6">
             <label for="precioPorHora" class="form-label">Precio por hora</label>
-            <input type="number" step="any" class="form-control bg-dark text-white" name="precioPorHora" id="precioPorHora" required>
+            <input type="number" step="any" class="form-control bg-dark text-white" name="precio_por_hora" id="precioPorHora" required>
         </div>
         @error('precioPorHora')
         Error en el precio por hora

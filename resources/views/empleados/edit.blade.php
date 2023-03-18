@@ -34,14 +34,14 @@
         @enderror
         <div class="mb-3 col-md-6">
             <label for="horasTrabajadas" class="form-label">Horas trabajadas</label>
-            <input type="number" step="any" class="form-control bg-dark text-white" name="horasTrabajadas" id="horasTrabajadas" value="{{ $empleado->horasTrabajadas }}" required>
+            <input type="number" step="any" class="form-control bg-dark text-white" name="horas_trabajadas" id="horasTrabajadas" value="{{ $empleado->horas_trabajadas }}" required>
         </div>
         @error('horasTrabajadas')
         Error en las horas trabajadas
         @enderror
         <div class="mb-3 col-md-6">
             <label for="precioPorHora" class="form-label">Precio por hora</label>
-            <input type="number" step="any" class="form-control bg-dark text-white" name="precioPorHora" id="precioPorHora" value="{{ $empleado->precioPorHora }}" required>
+            <input type="number" step="any" class="form-control bg-dark text-white" name="precio_por_hora" id="precioPorHora" value="{{ $empleado->precio_por_hora }}" required>
         </div>
         @error('precioPorHora')
         Error en el precio por hora
