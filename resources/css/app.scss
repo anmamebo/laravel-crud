@@ -112,3 +112,16 @@ header.navbar {
     font-weight: 800;
     letter-spacing: 2px;
 }
+
+.btn:focus,
+input,
+textarea,
+button:focus,
+select {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+input:focus {
+    border-color: black !important;
+}
