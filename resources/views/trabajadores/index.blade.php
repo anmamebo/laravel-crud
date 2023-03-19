@@ -15,7 +15,7 @@
     <a href="{{ route('gerentes.create') }}" class="btn btn-light">Crear gerente</a>
 
     <div class="table-responsive mt-4">
-        <table class="table table-striped table-dark table-sm">
+        <table class="table table-striped table-dark table-sm text-center">
             <thead>
                 <tr>
                     <th scope="col">id</th>
@@ -23,6 +23,7 @@
                     <th scope="col">Apellidos</th>
                     <th scope="col">Edad</th>
                     <th scope="col">Sueldo</th>
+                    <th scope="col">Teléfono</th>
                     <th scope="col">Rol</th>
                 </tr>
             </thead>
@@ -34,6 +35,26 @@
                     <td>{{ $trabajador->persona->apellidos }}</td>
                     <td>{{ $trabajador->persona->edad }}</td>
                     <td>{{ $trabajador->calcularSueldo() }}</td>
+                    <td>
+                        @if (count($trabajador->telefonos) > 0)
+                        <div class="dropdown-center">
+                            <a class="btn text-white dropdown-toggle p-0 border-0" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                                Mostrar
+                            </a>
+                            <ul class="dropdown-menu">
+                                @foreach ($trabajador->telefonos as $telefono)
+                                <li>
+                                    <span class="dropdown-item-text">
+                                        {{ $telefono->numero_telefono }}
+                                    </span>
+                                </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        @else
+                        <p class="m-0">No disponible.</p>
+                        @endif
+                    </td>
                     <td>{{ $trabajador->obtenerRol() }}</td>
                 </tr>
                 @endforeach

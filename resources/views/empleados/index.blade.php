@@ -14,7 +14,7 @@
     <a href="{{ route('empleados.create') }}" class="btn btn-light">Crear empleado</a>
 
     <div class="table-responsive mt-4">
-        <table class="table table-striped table-dark table-sm">
+        <table class="table table-striped table-dark table-sm text-center">
             <thead>
                 <tr>
                     <th scope="col">id</th>
@@ -22,6 +22,7 @@
                     <th scope="col">Apellidos</th>
                     <th scope="col">Edad</th>
                     <th scope="col">Sueldo</th>
+                    <th scope="col">Teléfono</th>
                     <th scope="col"></th>
                     <th scope="col"></th>
                 </tr>
@@ -34,6 +35,26 @@
                     <td>{{ $empleado->trabajador->persona->apellidos }}</td>
                     <td>{{ $empleado->trabajador->persona->edad }}</td>
                     <td>{{ $empleado->calcularSueldo() }}</td>
+                    <td>
+                        @if (count($empleado->trabajador->telefonos) > 0)
+                        <div class="dropdown-center">
+                            <a class="btn text-white dropdown-toggle p-0 border-0" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                                Mostrar
+                            </a>
+                            <ul class="dropdown-menu">
+                                @foreach ($empleado->trabajador->telefonos as $telefono)
+                                <li>
+                                    <span class="dropdown-item-text">
+                                        {{ $telefono->numero_telefono }}
+                                    </span>
+                                </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        @else
+                        <p class="m-0">No disponible.</p>
+                        @endif
+                    </td>
                     <td class="text-end">
                         <a href="{{ route('empleados.edit', $empleado) }}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-pencil-square" viewBox="0 0 16 16">
