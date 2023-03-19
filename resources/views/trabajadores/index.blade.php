@@ -23,6 +23,7 @@
                     <th scope="col">Apellidos</th>
                     <th scope="col">Edad</th>
                     <th scope="col">Sueldo</th>
+                    <th scope="col">Rol</th>
                 </tr>
             </thead>
             <tbody class="table-group-divider">
@@ -33,6 +34,7 @@
                     <td>{{ $trabajador->persona->apellidos }}</td>
                     <td>{{ $trabajador->persona->edad }}</td>
                     <td>{{ $trabajador->calcularSueldo() }}</td>
+                    <td>{{ $trabajador->obtenerRol() }}</td>
                 </tr>
                 @endforeach
             </tbody>

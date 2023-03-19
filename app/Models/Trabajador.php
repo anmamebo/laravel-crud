@@ -50,4 +50,14 @@ class Trabajador extends Persona
     {
         return true;
     }
+
+    public function obtenerRol() {
+        if ($this->empleado != null) {
+            return "Empleado";
+        } else if ($this->gerente != null) {
+            return "Gerente";
+        } else {
+            return null;
+        }
+    }
 }
