@@ -1,4 +1,5 @@
 const addTelefonoBtn = document.getElementById('addTelefono');
+const removeTelefonoBtn = document.getElementById('removeTelefono');
 const telefonosDiv = document.getElementById('telefonos');
 
 addTelefonoBtn.addEventListener('click', () => {
@@ -12,4 +13,10 @@ addTelefonoBtn.addEventListener('click', () => {
 
     telefonoDiv.appendChild(telefonoInput);
     telefonosDiv.appendChild(telefonoDiv);
+});
+
+removeTelefonoBtn.addEventListener('click', () => {
+    if (telefonosDiv.childElementCount > 1) {
+        telefonosDiv.removeChild(telefonosDiv.lastChild);
+    }
 });

@@ -52,6 +52,7 @@
                 </div>
             </div>
             <button type="button" class="btn btn-light mt-1" id="addTelefono">Añadir teléfono</button>
+            <button type="button" class="btn btn-light mt-1" id="removeTelefono">Quitar teléfono</button>
         </div>
 
         <div class="mb-3 col-md-12">
