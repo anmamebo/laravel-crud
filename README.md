@@ -2,7 +2,7 @@
 Proyecto para la asignatura Tecnologías Avanzadas de Desarrollo usando Laravel para realizar las operaciones CRUD.
 
 
-![UML](https://github.com/anmamebo/laravel-crud/blob/main/enunciado.png)
+![UML](https://raw.githubusercontent.com/anmamebo/laravel-crud/main/enunciado.png?token=GHSAT0AAAAAAB7GGNKDD2TIQOT2QGEMLXYCZAXONTQ)
 
 ---
 ## INSTRUCCIONES AL CLONAR REPOSITORIO
