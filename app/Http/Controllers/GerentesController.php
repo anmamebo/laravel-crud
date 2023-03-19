@@ -12,7 +12,7 @@ class GerentesController extends Controller
 {
     public function index(): View
     {
-        $gerentes = Gerente::all();
+        $gerentes = Gerente::paginate(12);
 
         return view('gerentes.index', compact('gerentes'));
     }

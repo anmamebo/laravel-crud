@@ -12,7 +12,7 @@ class EmpleadosController extends Controller
 {
     public function index(): View
     {
-        $empleados = Empleado::all();
+        $empleados = Empleado::paginate(12);
 
         return view('empleados.index', compact('empleados'));
     }

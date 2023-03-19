@@ -79,5 +79,6 @@
             </tbody>
         </table>
     </div>
+    {{ $gerentes->links() }}
 </div>
 @endsection

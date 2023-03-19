@@ -79,5 +79,6 @@
             </tbody>
         </table>
     </div>
+    {{ $empleados->links() }}
 </div>
 @endsection

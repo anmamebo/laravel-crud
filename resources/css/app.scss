@@ -117,11 +117,46 @@ header.navbar {
 input,
 textarea,
 button:focus,
-select {
+select,
+.page-link:focus {
     outline: none !important;
     box-shadow: none !important;
 }
 
 input:focus {
     border-color: black !important;
+}
+
+/*
+* Pagination
+*/
+.pagination {
+
+    .page-item {
+
+        margin-left: 2px;
+        margin-right: 2px;
+        border: none;
+
+        &.active {
+            .page-link {
+                background-color: #fff !important;
+                border-color: #fff;
+                color: #152028;
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+}
+        }
+
+        .page-link {
+            // padding: 8px;
+            background-color: transparent;
+            border-color: transparent;
+            color: white;
+        }
+    }
+
 }
