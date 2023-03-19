@@ -14,18 +14,29 @@
 
 <div class="container mt-4">
     @if($errors->any())
-    <div class="alert alert-danger px-5">
+    <div class="alert alert-danger alert-dismissible fade show px-5">
         @foreach($errors->all() as $error)
-        <p class="m-0">{{ $error }}</p>
+        <span class="m-0">{{ $error }}</span>
+        <br>
         @endforeach
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
 
     @if(session('mensaje'))
-    <div class="alert alert-success px-5">
-        <p class="m-0">{{ session('mensaje') }}</p>
+    <div class="alert alert-success alert-dismissible fade show px-5">
+        <span class="m-0">{{ session('mensaje') }}</span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
+
+    @if(session('error'))
+    <div class="alert alert-danger alert-dismissible fade show px-5">
+        <span class="m-0">{{ session('error') }}</span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
+
 
     <form action="{{ route('empleados.create') }}" method="post" class="row g-3 px-5 py-3">
         @csrf

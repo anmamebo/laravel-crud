@@ -13,6 +13,21 @@
 <div class="container mt-4">
     <a href="{{ route('empleados.create') }}" class="btn btn-light">Crear empleado</a>
 
+    @if(session('mensaje'))
+    <div class="alert alert-success alert-dismissible fade show px-5 mt-4">
+        <span class="m-0">{{ session('mensaje') }}</span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
+
+    @if(session('error'))
+    <div class="alert alert-danger alert-dismissible fade show px-5 mt-4">
+        <span class="m-0">{{ session('error') }}</span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
+
+
     <div class="table-responsive mt-4">
         <table class="table table-striped table-dark table-sm text-center">
             <thead>
