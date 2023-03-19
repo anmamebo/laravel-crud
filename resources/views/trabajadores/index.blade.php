@@ -10,8 +10,11 @@
     <h3 class="col-sm-11 container-title text-center text-sm-start text-white m-0 p-2">Trabajadores</h3>
 </div>
 
-<div class="container">
-    <div class="table-responsive">
+<div class="container mt-4">
+    <a href="{{ route('empleados.create') }}" class="btn btn-light me-3">Crear empleado</a>
+    <a href="{{ route('gerentes.create') }}" class="btn btn-light">Crear gerente</a>
+
+    <div class="table-responsive mt-4">
         <table class="table table-striped table-dark table-sm">
             <thead>
                 <tr>
