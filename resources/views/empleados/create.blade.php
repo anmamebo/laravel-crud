@@ -41,7 +41,7 @@
 
         <div class="mb-3 col-md-2">
             <label for="edad" class="form-label">Edad</label>
-            <input type="number" class="form-control bg-dark text-white" name="edad" id="edad" required>
+            <input type="text" class="form-control bg-dark text-white" name="edad" id="edad" required>
         </div>
 
         <div class="mb-3 col-md-12">
@@ -56,12 +56,12 @@
 
         <div class="mb-3 col-md-6">
             <label for="horasTrabajadas" class="form-label">Horas trabajadas</label>
-            <input type="number" step="any" class="form-control bg-dark text-white" name="horas_trabajadas" id="horasTrabajadas" required>
+            <input type="text" step="any" class="form-control bg-dark text-white" name="horas_trabajadas" id="horasTrabajadas" required>
         </div>
 
         <div class="mb-3 col-md-6">
             <label for="precioPorHora" class="form-label">Precio por hora</label>
-            <input type="number" step="any" class="form-control bg-dark text-white" name="precio_por_hora" id="precioPorHora" required>
+            <input type="text" step="any" class="form-control bg-dark text-white" name="precio_por_hora" id="precioPorHora" required>
         </div>
 
         <div class="mb-3 col-md-12">

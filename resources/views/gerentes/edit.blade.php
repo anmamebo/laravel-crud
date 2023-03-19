@@ -40,7 +40,7 @@
 
         <div class="mb-3 col-md-2">
             <label for="edad" class="form-label">Edad</label>
-            <input type="number" class="form-control bg-dark text-white" name="edad" id="edad" value="{{ $gerente->trabajador->persona->edad }}" required>
+            <input type="text" class="form-control bg-dark text-white" name="edad" id="edad" value="{{ $gerente->trabajador->persona->edad }}" required>
         </div>
 
         @if (count($gerente->trabajador->telefonos) > 0)
@@ -58,7 +58,7 @@
 
         <div class="mb-3 col-md-12">
             <label for="salario" class="form-label">Salario</label>
-            <input type="number" step="any" class="form-control bg-dark text-white" name="salario" id="salario" value="{{ $gerente->salario }}" required>
+            <input type="text" step="any" class="form-control bg-dark text-white" name="salario" id="salario" value="{{ $gerente->salario }}" required>
         </div>
 
         <div class="mb-3 col-md-12">

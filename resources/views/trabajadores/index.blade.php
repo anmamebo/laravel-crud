@@ -52,7 +52,7 @@
                             </ul>
                         </div>
                         @else
-                        <p class="m-0">No disponible.</p>
+                        <p class="m-0">No disponible</p>
                         @endif
                     </td>
                     <td>{{ $trabajador->obtenerRol() }}</td>

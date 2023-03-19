@@ -41,7 +41,7 @@
 
         <div class="mb-3 col-md-2">
             <label for="edad" class="form-label">Edad</label>
-            <input type="number" class="form-control bg-dark text-white" name="edad" id="edad" required>
+            <input type="text" class="form-control bg-dark text-white" name="edad" id="edad" required>
         </div>
 
         <div class="mb-3 col-md-12">
@@ -56,7 +56,7 @@
 
         <div class="mb-3 col-md-12">
             <label for="salario" class="form-label">Salario</label>
-            <input type="number" step="any" class="form-control bg-dark text-white" name="salario" id="salario" required>
+            <input type="text" step="any" class="form-control bg-dark text-white" name="salario" id="salario" required>
         </div>
 
         <div class="mb-3 col-md-12">
