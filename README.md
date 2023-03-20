@@ -2,7 +2,7 @@
 Proyecto para la asignatura Tecnologías Avanzadas de Desarrollo usando Laravel para realizar las operaciones CRUD.
 
 
-![UML](https://raw.githubusercontent.com/anmamebo/laravel-crud/main/enunciado.png?token=GHSAT0AAAAAAB7GGNKDD2TIQOT2QGEMLXYCZAXONTQ)
+![UML](https://github.com/anmamebo/laravel-crud/blob/main/enunciado.png)
 
 ---
 ## INSTRUCCIONES AL CLONAR REPOSITORIO
@@ -60,6 +60,18 @@ php artisan migrate:fresh  //borra y crea todas las tablas de nuevo
 ```
 
 Con esto ya tendría que correr sin problemas la aplicación de Laravel que hemos clonado.
+
+### 5. Lanzar proyecto
+
+Ejecutar los comandos en diferentes terminales
+
+```
+npm run dev
+```
+
+```
+php artisan serve
+```
 
 ---
 ## FICHERO .SQL CON DATOS DE EJEMPLO
