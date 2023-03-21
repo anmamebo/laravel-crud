@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\ValidationMessages;
+
 use App\Models\Empleado;
 use App\Models\Persona;
 use App\Models\Trabajador;
@@ -26,13 +28,13 @@ class EmpleadosController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nombre' => 'required|string',
-            'apellidos' => 'required|string',
-            'edad' => 'required|integer',
+            'nombre' => 'required|string|max:255',
+            'apellidos' => 'required|string|max:255',
+            'edad' => 'required|integer|max:99|min:0',
             'telefonos.*' => 'required|regex:/^\d{9}$/',
-            'horas_trabajadas' => 'required|numeric',
-            'precio_por_hora' => 'required|numeric'
-        ]);
+            'horas_trabajadas' => 'required|numeric|min:0',
+            'precio_por_hora' => 'required|numeric|min:0'
+        ], ValidationMessages::messages());
 
         try {
             DB::beginTransaction();
@@ -76,13 +78,13 @@ class EmpleadosController extends Controller
     public function update(Empleado $empleado, Request $request)
     {
         $request->validate([
-            'nombre' => 'required|string',
-            'apellidos' => 'required|string',
-            'edad' => 'required|integer',
+            'nombre' => 'required|string|max:255',
+            'apellidos' => 'required|string|max:255',
+            'edad' => 'required|integer|max:99|min:0',
             'telefonos.*' => 'required|regex:/^\d{9}$/',
-            'horas_trabajadas' => 'required|numeric',
-            'precio_por_hora' => 'required|numeric'
-        ]);
+            'horas_trabajadas' => 'required|numeric|min:0',
+            'precio_por_hora' => 'required|numeric|min:0'
+        ], ValidationMessages::messages());
 
         try {
             DB::beginTransaction();

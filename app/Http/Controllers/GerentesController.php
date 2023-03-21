@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\ValidationMessages;
+
 use App\Models\Gerente;
 use App\Models\Persona;
 use App\Models\Trabajador;
@@ -26,12 +28,12 @@ class GerentesController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nombre' => 'required|string',
-            'apellidos' => 'required|string',
-            'edad' => 'required|integer',
+            'nombre' => 'required|string|max:255',
+            'apellidos' => 'required|string|max:255',
+            'edad' => 'required|integer|max:99|min:0',
             'telefonos.*' => 'required|regex:/^\d{9}$/',
-            'salario' => 'required|numeric'
-        ]);
+            'salario' => 'required|numeric|min:0'
+        ], ValidationMessages::messages());
 
         try {
             DB::beginTransaction();
@@ -74,12 +76,12 @@ class GerentesController extends Controller
     public function update(Gerente $gerente, Request $request)
     {
         $request->validate([
-            'nombre' => 'required|string',
-            'apellidos' => 'required|string',
-            'edad' => 'required|integer',
+            'nombre' => 'required|string|max:255',
+            'apellidos' => 'required|string|max:255',
+            'edad' => 'required|integer|max:99|min:0',
             'telefonos.*' => 'required|regex:/^\d{9}$/',
-            'salario' => 'required|numeric'
-        ]);
+            'salario' => 'required|numeric|min:0'
+        ], ValidationMessages::messages());
 
         try {
             DB::beginTransaction();
