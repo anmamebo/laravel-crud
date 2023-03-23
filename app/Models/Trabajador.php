@@ -48,7 +48,11 @@ class Trabajador extends Persona
 
     public function debePagarImpuestos(): bool
     {
-        return true;
+        if ($this->calcularSueldo() > 2000) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function obtenerRol() {
