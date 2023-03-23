@@ -20,6 +20,11 @@ class GerentesController extends Controller
         return view('gerentes.index', compact('gerentes'));
     }
 
+    public function show(Gerente $gerente)
+    {
+        return view('gerentes.show', compact('gerente'));
+    }
+
     public function create()
     {
         return view('gerentes.create');

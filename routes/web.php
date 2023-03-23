@@ -21,6 +21,7 @@ Route::get('/trabajadores/create', [TrabajadorsController::class, 'create'])->na
 Route::post('/trabajadores/create', [TrabajadorsController::class, 'store'])->name('trabajadores.create');
 
 Route::get('/empleados', [EmpleadosController::class, 'index'])->name('empleados');
+Route::get('/empleados/{empleado}', [EmpleadosController::class, 'show'])->name('empleados.show');
 Route::get('/empleados/create', [EmpleadosController::class, 'create'])->name('empleados.create');
 Route::post('/empleados/create', [EmpleadosController::class, 'store'])->name('empleados.create');
 Route::get('/empleados/edit/{empleado}', [EmpleadosController::class, 'edit'])->name('empleados.edit');
@@ -28,6 +29,7 @@ Route::put('/empleados/edit/{empleado}', [EmpleadosController::class, 'update'])
 Route::delete('/empleados/delete/{empleado}', [EmpleadosController::class, 'destroy'])->name('empleados.delete');
 
 Route::get('/gerentes', [GerentesController::class, 'index'])->name('gerentes');
+Route::get('/gerentes/{gerente}', [GerentesController::class, 'show'])->name('gerentes.show');
 Route::get('/gerentes/create', [GerentesController::class, 'create'])->name('gerentes.create');
 Route::post('/gerentes/create', [GerentesController::class, 'store'])->name('gerentes.create');
 Route::get('/gerentes/edit/{gerente}', [GerentesController::class, 'edit'])->name('gerentes.edit');

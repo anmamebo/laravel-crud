@@ -20,6 +20,11 @@ class EmpleadosController extends Controller
         return view('empleados.index', compact('empleados'));
     }
 
+    public function show(Empleado $empleado)
+    {
+        return view('empleados.show', compact('empleado'));
+    }
+
     public function create()
     {
         return view('empleados.create');
