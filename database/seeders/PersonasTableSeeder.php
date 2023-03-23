@@ -21,6 +21,7 @@ class PersonasTableSeeder extends Seeder
         // Insertar los datos en la base de datos
         foreach ($data as $persona) {
             DB::table('personas')->insert([
+                'id' => $persona->id,
                 'nombre' => $persona->nombre,
                 'apellidos' => $persona->apellidos,
                 'edad' => $persona->edad,
