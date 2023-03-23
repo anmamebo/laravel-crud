@@ -1,0 +1,152 @@
+[
+    {
+        "id": 1,
+        "numero_telefono": "600123456",
+        "trabajador_id": 1
+    },
+    {
+        "id": 2,
+        "numero_telefono": "600345678",
+        "trabajador_id": 1
+    },
+    {
+        "id": 3,
+        "numero_telefono": "600567890",
+        "trabajador_id": 3
+    },
+    {
+        "id": 4,
+        "numero_telefono": "600789012",
+        "trabajador_id": 4
+    },
+    {
+        "id": 5,
+        "numero_telefono": "600901234",
+        "trabajador_id": 5
+    },
+    {
+        "id": 6,
+        "numero_telefono": "600123456",
+        "trabajador_id": 5
+    },
+    {
+        "id": 7,
+        "numero_telefono": "600345678",
+        "trabajador_id": 5
+    },
+    {
+        "id": 8,
+        "numero_telefono": "600567890",
+        "trabajador_id": 8
+    },
+    {
+        "id": 9,
+        "numero_telefono": "600789012",
+        "trabajador_id": 12
+    },
+    {
+        "id": 10,
+        "numero_telefono": "601901234",
+        "trabajador_id": 15
+    },
+    {
+        "id": 11,
+        "numero_telefono": "602123456",
+        "trabajador_id": 16
+    },
+    {
+        "id": 12,
+        "numero_telefono": "602345678",
+        "trabajador_id": 17
+    },
+    {
+        "id": 13,
+        "numero_telefono": "602567890",
+        "trabajador_id": 17
+    },
+    {
+        "id": 14,
+        "numero_telefono": "602789012",
+        "trabajador_id": 18
+    },
+    {
+        "id": 15,
+        "numero_telefono": "602901234",
+        "trabajador_id": 20
+    },
+    {
+        "id": 16,
+        "numero_telefono": "603123456",
+        "trabajador_id": 21
+    },
+    {
+        "id": 17,
+        "numero_telefono": "603345678",
+        "trabajador_id": 21
+    },
+    {
+        "id": 18,
+        "numero_telefono": "603567890",
+        "trabajador_id": 22
+    },
+    {
+        "id": 19,
+        "numero_telefono": "603789012",
+        "trabajador_id": 22
+    },
+    {
+        "id": 20,
+        "numero_telefono": "603901234",
+        "trabajador_id": 24
+    },
+    {
+        "id": 21,
+        "numero_telefono": "604321098",
+        "trabajador_id": 25
+    },
+    {
+        "id": 22,
+        "numero_telefono": "604543210",
+        "trabajador_id": 28
+    },
+    {
+        "id": 23,
+        "numero_telefono": "604765432",
+        "trabajador_id": 29
+    },
+    {
+        "id": 24,
+        "numero_telefono": "604987654",
+        "trabajador_id": 30
+    },
+    {
+        "id": 25,
+        "numero_telefono": "605109876",
+        "trabajador_id": 30
+    },
+    {
+        "id": 26,
+        "numero_telefono": "605332098",
+        "trabajador_id": 30
+    },
+    {
+        "id": 27,
+        "numero_telefono": "605554321",
+        "trabajador_id": 3
+    },
+    {
+        "id": 28,
+        "numero_telefono": "605776543",
+        "trabajador_id": 3
+    },
+    {
+        "id": 29,
+        "numero_telefono": "605998765",
+        "trabajador_id": 3
+    },
+    {
+        "id": 30,
+        "numero_telefono": "606110987",
+        "trabajador_id": 4
+    }
+]

@@ -1,0 +1,77 @@
+[
+    {
+        "id": 1,
+        "salario": 3000.5,
+        "trabajador_id": 1
+    },
+    {
+        "id": 2,
+        "salario": 3500.25,
+        "trabajador_id": 2
+    },
+    {
+        "id": 3,
+        "salario": 4000.0,
+        "trabajador_id": 4
+    },
+    {
+        "id": 4,
+        "salario": 3200.75,
+        "trabajador_id": 5
+    },
+    {
+        "id": 5,
+        "salario": 2900.0,
+        "trabajador_id": 8
+    },
+    {
+        "id": 6,
+        "salario": 3800.5,
+        "trabajador_id": 10
+    },
+    {
+        "id": 7,
+        "salario": 4200.75,
+        "trabajador_id": 11
+    },
+    {
+        "id": 8,
+        "salario": 2800.0,
+        "trabajador_id": 12
+    },
+    {
+        "id": 9,
+        "salario": 3700.5,
+        "trabajador_id": 13
+    },
+    {
+        "id": 10,
+        "salario": 3200.25,
+        "trabajador_id": 14
+    },
+    {
+        "id": 11,
+        "salario": 4500.0,
+        "trabajador_id": 15
+    },
+    {
+        "id": 12,
+        "salario": 3900.75,
+        "trabajador_id": 16
+    },
+    {
+        "id": 13,
+        "salario": 3100.0,
+        "trabajador_id": 17
+    },
+    {
+        "id": 14,
+        "salario": 4200.50,
+        "trabajador_id": 18
+    },
+    {
+        "id": 15,
+        "salario": 3600.25,
+        "trabajador_id": 19
+    }
+]

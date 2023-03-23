@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "horas_trabajadas": 8,
+        "precio_por_hora": 10,
+        "trabajador_id": 3
+    },
+    {
+        "id": 2,
+        "horas_trabajadas": 6,
+        "precio_por_hora": 12,
+        "trabajador_id": 6
+    },
+    {
+        "id": 3,
+        "horas_trabajadas": 4,
+        "precio_por_hora": 15,
+        "trabajador_id": 7
+    },
+    {
+        "id": 4,
+        "horas_trabajadas": 10,
+        "precio_por_hora": 8,
+        "trabajador_id": 9
+    },
+    {
+        "id": 5,
+        "horas_trabajadas": 9,
+        "precio_por_hora": 11,
+        "trabajador_id": 20
+    },
+    {
+        "id": 6,
+        "horas_trabajadas": 7,
+        "precio_por_hora": 13,
+        "trabajador_id": 21
+    },
+    {
+        "id": 7,
+        "horas_trabajadas": 5,
+        "precio_por_hora": 16,
+        "trabajador_id": 22
+    },
+    {
+        "id": 8,
+        "horas_trabajadas": 8,
+        "precio_por_hora": 14,
+        "trabajador_id": 23
+    },
+    {
+        "id": 9,
+        "horas_trabajadas": 6,
+        "precio_por_hora": 9,
+        "trabajador_id": 24
+    },
+    {
+        "id": 10,
+        "horas_trabajadas": 10,
+        "precio_por_hora": 7,
+        "trabajador_id": 25
+    },
+    {
+        "id": 11,
+        "horas_trabajadas": 12,
+        "precio_por_hora": 9,
+        "trabajador_id": 26
+    },
+    {
+        "id": 12,
+        "horas_trabajadas": 3,
+        "precio_por_hora": 20,
+        "trabajador_id": 27
+    },
+    {
+        "id": 13,
+        "horas_trabajadas": 8,
+        "precio_por_hora": 12,
+        "trabajador_id": 28
+    },
+    {
+        "id": 14,
+        "horas_trabajadas": 6,
+        "precio_por_hora": 15,
+        "trabajador_id": 29
+    },
+    {
+        "id": 15,
+        "horas_trabajadas": 4,
+        "precio_por_hora": 18,
+        "trabajador_id": 30
+    }
+]
