@@ -100,7 +100,8 @@ header.navbar {
 /*
 * Formularios
 */
-.form-control {
+.form-control,
+.form-select {
     background-color: #222;
     border: 1px solid #515151;
     color: #fff;
@@ -123,7 +124,8 @@ select,
     box-shadow: none !important;
 }
 
-input:focus {
+input:focus,
+select:focus {
     border-color: black !important;
 }
 

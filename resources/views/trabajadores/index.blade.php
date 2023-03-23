@@ -11,8 +11,7 @@
 </div>
 
 <div class="container mt-4">
-    <a href="{{ route('empleados.create') }}" class="btn btn-light me-3">Crear empleado</a>
-    <a href="{{ route('gerentes.create') }}" class="btn btn-light">Crear gerente</a>
+    <a href="{{ route('trabajadores.create') }}" class="btn btn-light me-3">Crear trabajador</a>
 
     <div class="table-responsive mt-4">
         <table class="table table-striped table-dark table-sm text-center">
