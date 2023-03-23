@@ -49,7 +49,7 @@
                     <td>{{ $empleado->trabajador->persona->nombre }}</td>
                     <td>{{ $empleado->trabajador->persona->apellidos }}</td>
                     <td>{{ $empleado->trabajador->persona->edad }}</td>
-                    <td>{{ $empleado->calcularSueldo() }}</td>
+                    <td>{{ $empleado->calcularSueldo() }} €</td>
                     <td>
                         @if (count($empleado->trabajador->telefonos) > 0)
                         <div class="dropdown-center">
