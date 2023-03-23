@@ -61,6 +61,10 @@
             </tbody>
         </table>
     </div>
-    {{ $trabajadores->links() }}
+</div>
+<div class="row justify-content-center text-center">
+    <div class="col-2">
+        {{ $trabajadores->links() }}
+    </div>
 </div>
 @endsection
