@@ -80,9 +80,3 @@ php artisan serve
 ```
 
 Con esto ya tendría que correr sin problemas la aplicación de Laravel que hemos clonado.
-
----
-## FICHERO .SQL CON DATOS DE EJEMPLO
----
-
-- [datos.sql](https://github.com/anmamebo/laravel-crud/blob/main/database/datos.sql)
