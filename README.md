@@ -46,7 +46,7 @@ php artisan key:generate
 
 ### 4. Ejecutar migraciones
 
-Por último, ejecutamos las migraciones para que se generen las tablas con:
+Ejecutamos las migraciones para que se generen las tablas con:
 
 ```
 php artisan migrate
@@ -59,9 +59,15 @@ php artisan migrate:refresh
 php artisan migrate:fresh  //borra y crea todas las tablas de nuevo
 ```
 
-Con esto ya tendría que correr sin problemas la aplicación de Laravel que hemos clonado.
+### 5. Ejecutar seeders
 
-### 5. Lanzar proyecto
+Por último, ejecutamos los seeders para cargar datos de ejemplo en las tablas:
+
+```
+php artisan db:seed
+```
+
+### 6. Lanzar proyecto
 
 Ejecutar los comandos en diferentes terminales
 
@@ -72,6 +78,8 @@ npm run dev
 ```
 php artisan serve
 ```
+
+Con esto ya tendría que correr sin problemas la aplicación de Laravel que hemos clonado.
 
 ---
 ## FICHERO .SQL CON DATOS DE EJEMPLO
